@@ -12,8 +12,7 @@ app.use(cors());
 
 requireDir("./models");
 
-const Registration = mongoose.model("Registration");
-const Login = mongoose.model("Login");
+const User = mongoose.model("User");
 
 app.use("/api", require("./routes"));
 

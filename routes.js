@@ -1,23 +1,18 @@
 const express = require("express");
 const routes = express.Router();
 
-const RegistrationController = require("./controllers/RegistrationController");
-const LoginController = require("./controllers/LoginController");
+const UserController = require("./controllers/UserController");
 
-// Registration routes
+// User routes
 
-routes.get("/cadastros", RegistrationController.index);
-routes.post("/cadastro", RegistrationController.save);
-routes.delete("/cadastro/:id", RegistrationController.destroy);
-routes.get("/cadastro/:id", RegistrationController.show);
-routes.put("/cadastro/:id", RegistrationController.update);
+routes.get("/users", UserController.index);
+routes.post("/user", UserController.save);
+routes.delete("/user/:id", UserController.destroy);
+routes.get("/user/:id", UserController.show);
+routes.put("/user/:id", UserController.update);
 
-// Login routes
+// Login route
 
-routes.get("/logins", LoginController.index);
-routes.post("/login", LoginController.save);
-routes.delete("/login/:id", LoginController.destroy);
-routes.get("/login/:id", LoginController.show);
-routes.put("/login/:id", LoginController.update);
+routes.post("/login", UserController.login);
 
 module.exports = routes;
