@@ -2,6 +2,8 @@ const express = require("express");
 const routes = express.Router();
 
 const UserController = require("./controllers/UserController");
+const AnnouncementController = require("./controllers/AnnouncementController");
+const DonationController = require("./controllers/DonationController");
 
 // User routes
 
@@ -14,5 +16,21 @@ routes.put("/user/:id", UserController.update);
 // Login route
 
 routes.post("/login", UserController.login);
+
+// Announcement routes
+
+routes.get("/announcements", AnnouncementController.index);
+routes.post("/announcement", AnnouncementController.save);
+routes.delete("/announcement/:id", AnnouncementController.destroy);
+routes.get("/announcement/:id", AnnouncementController.show);
+routes.put("/announcement/:id", AnnouncementController.update);
+
+// Donation routes
+
+routes.get("/donations", DonationController.index);
+routes.post("/donation", DonationController.save);
+routes.delete("/donation/:id", DonationController.destroy);
+routes.get("/donation/:id", DonationController.show);
+routes.put("/donation/:id", DonationController.update);
 
 module.exports = routes;

@@ -13,6 +13,8 @@ app.use(cors());
 requireDir("./models");
 
 const User = mongoose.model("User");
+const Announcement = mongoose.model("Announcement");
+const Donation = mongoose.model("Donation");
 
 app.use("/api", require("./routes"));
 
