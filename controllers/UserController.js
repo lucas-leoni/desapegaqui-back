@@ -14,6 +14,7 @@ module.exports = {
 
   async save(req, res) {
     const user = await User.create(req.body);
+    console.log("Usuário cadastrado com sucesso!")
     return res.json(user);
   },
 

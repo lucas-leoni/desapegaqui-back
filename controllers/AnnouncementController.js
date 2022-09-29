@@ -14,6 +14,7 @@ module.exports = {
 
   async save(req, res) {
     const announcement = await Announcement.create(req.body);
+    console.log("Anúncio cadastrado com sucesso!");
     return res.json(announcement);
   },
 

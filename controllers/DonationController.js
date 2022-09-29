@@ -14,6 +14,7 @@ module.exports = {
 
   async save(req, res) {
     const donation = await Donation.create(req.body);
+    console.log("Doação realizada com sucesso!");
     return res.json(donation);
   },
 
