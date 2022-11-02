@@ -3,6 +3,7 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
+    min: 3
   },
   email: {
     type: String,
@@ -16,29 +17,37 @@ const UserSchema = new mongoose.Schema({
     max: 16,
   },
   address: {
-    zip_code: {
+    cep: {
       type: String,
       required: false,
+      min: 8,
+      max: 8,
     },
     city: {
       type: String,
       required: false,
+      min: 3,
     },
     state: {
       type: String,
       required: false,
+      min: 2,
+      max: 2,
     },
     street: {
       type: String,
       required: false,
+      min: 3,
     },
     number: {
       type: Number,
       required: false,
+      min: 1,
     },
     neighborhood: {
       type: String,
       required: false,
+      min: 3,
     },
     complement: {
       type: String,
@@ -46,26 +55,19 @@ const UserSchema = new mongoose.Schema({
     },
   },
   telephone: {
-    area_code: {
+    ddd: {
       type: Number,
       required: false,
+      min: 2,
+      max: 2,
     },
     telephone: {
       type: String,
       required: false,
+      min: 8,
+      max: 9,
     },
   },
 });
 
 mongoose.model("User", UserSchema);
-
-/* 
--------------
-Body Postman:
--------------
-{
-    "username": "",
-    "email": "",
-    "password": ""
-}
-*/
