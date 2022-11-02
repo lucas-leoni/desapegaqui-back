@@ -1,5 +1,5 @@
-const mongoose = require("../database");
-const User = mongoose.model("User");
+const mongoose = require('../database');
+const User = mongoose.model('User');
 
 module.exports = {
   async index(req, res) {
@@ -14,7 +14,7 @@ module.exports = {
 
   async save(req, res) {
     const user = await User.create(req.body);
-    console.log("Usuário cadastrado com sucesso!")
+    console.log('Usuário cadastrado com sucesso!');
     return res.json(user);
   },
 
@@ -31,16 +31,7 @@ module.exports = {
   },
 
   async login(req, res) {
-    const login = await User.findOne(
-      { email: req.body.email },
-      function (err, data) {
-        if (req.body.password === data.password) {
-          console.log("Usuário logado");
-        } else {
-          console.log("Senha incorreta");
-        }
-      }
-    ).clone();
+    const login = await User.findOne({ email: req.body.email }).clone();
     return res.json(login);
   },
 };
