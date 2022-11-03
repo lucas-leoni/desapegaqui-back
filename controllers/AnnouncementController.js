@@ -8,7 +8,9 @@ module.exports = {
   },
 
   async show(req, res) {
-    const announcement = await Announcement.findById(req.params.id);
+    const announcement = await Announcement.findById(req.params.id).populate(
+      'user'
+    );
     return res.json(announcement);
   },
 
@@ -42,9 +44,9 @@ module.exports = {
     return res.json(announcement);
   },
   async showNecessities(req, res) {
-    const announcement = await Announcement.find({ type: 'necessity' }).populate(
-      'user'
-    );
+    const announcement = await Announcement.find({
+      type: 'necessity',
+    }).populate('user');
     return res.json(announcement);
   },
 };
