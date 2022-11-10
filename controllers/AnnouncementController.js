@@ -1,5 +1,6 @@
 const mongoose = require('../database');
 const Announcement = mongoose.model('Announcement');
+const User = mongoose.model('User');
 
 module.exports = {
   async index(req, res) {
@@ -46,6 +47,20 @@ module.exports = {
   async showNecessities(req, res) {
     const announcement = await Announcement.find({
       type: 'necessity',
+    }).populate('user');
+    return res.json(announcement);
+  },
+  async showMyDonations(req, res) {
+    const announcement = await Announcement.find({
+      type: 'donation',
+      user: req.params.id,
+    }).populate('user');
+    return res.json(announcement);
+  },
+  async showMyNecessities(req, res) {
+    const announcement = await Announcement.find({
+      type: 'necessity',
+      user: req.params.id,
     }).populate('user');
     return res.json(announcement);
   },

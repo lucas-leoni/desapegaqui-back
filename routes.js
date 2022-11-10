@@ -28,10 +28,12 @@ routes.put('/announcement/:id', AnnouncementController.update);
 // Donation announcements routes
 
 routes.get('/donation-announcements', AnnouncementController.showDonations);
+routes.get('/my-donation-announcements/:id', AnnouncementController.showMyDonations);
 
 // Necessity announcements routes
 
 routes.get('/necessity-announcements', AnnouncementController.showNecessities);
+routes.get('/my-necessity-announcements/:id', AnnouncementController.showMyNecessities);
 
 // Donation routes
 
