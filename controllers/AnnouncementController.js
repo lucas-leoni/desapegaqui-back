@@ -1,6 +1,5 @@
 const mongoose = require('../database');
 const Announcement = mongoose.model('Announcement');
-const User = mongoose.model('User');
 
 module.exports = {
   async index(req, res) {
