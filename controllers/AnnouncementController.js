@@ -38,14 +38,16 @@ module.exports = {
     return res.json(announcement);
   },
   async showDonations(req, res) {
-    const announcement = await Announcement.find({ type: 'donation' }).populate(
-      'user'
-    );
+    const announcement = await Announcement.find({
+      type: 'donation',
+      status: 'active',
+    }).populate('user');
     return res.json(announcement);
   },
   async showNecessities(req, res) {
     const announcement = await Announcement.find({
       type: 'necessity',
+      status: 'active',
     }).populate('user');
     return res.json(announcement);
   },
