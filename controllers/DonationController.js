@@ -8,7 +8,8 @@ module.exports = {
   },
 
   async show(req, res) {
-    const donation = await Donation.findById(req.params.id);
+    const donation = await Donation.findById(req.params.id).populate("announcement").populate("donor")
+    .populate("beneficiary");
     return res.json(donation);
   },
 
