@@ -19,5 +19,6 @@ const Donation = mongoose.model("Donation");
 app.use("/api", require("./routes"));
 
 app.listen(port, () => {
-  console.log(`API RUNNING, http://localhost:${port}`);
+  /* console.log(`API RUNNING, http://localhost:${port}`); */
+  console.log(`API RUNNING, http://192.168.30.19:${port}`);
 });
