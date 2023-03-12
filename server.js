@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const port = process.env.port || 5000;
+const port = process.env.port || 8080;
 const requireDir = require("require-dir");
 const mongoose = require("mongoose");
 
@@ -19,6 +19,6 @@ const Donation = mongoose.model("Donation");
 app.use("/api", require("./routes"));
 
 app.listen(port, () => {
-  /* console.log(`API RUNNING, http://localhost:${port}`); */
-  console.log(`API RUNNING, http://192.168.30.19:${port}`);
+  console.log(`API RUNNING, http://localhost:${port}`);
+  /* console.log(`API RUNNING, http://192.168.30.19:${port}`); */
 });
