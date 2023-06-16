@@ -1,5 +1,3 @@
 {
-  "build": {
-    "command": "node server.js"
-  }
+  "buildCommand": "node server.js"
 }
