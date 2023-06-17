@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "server.js"
+      "handle": "vercel",
+      "src": "/api/.*"
     }
   ]
 }
