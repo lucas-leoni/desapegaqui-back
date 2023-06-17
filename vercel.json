@@ -11,8 +11,5 @@
       "handle": "vercel",
       "src": "/api/.*"
     }
-  ],
-  "files": [
-    "models/**"
   ]
 }
